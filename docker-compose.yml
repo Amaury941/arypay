@@ -1,0 +1,20 @@
+services:
+  rabbitmq:
+    image: rabbitmq:4-management
+    container_name: rabbitmq
+    restart: unless-stopped
+    ports:
+      # AMQP protocol port (where your apps connect)
+      - "5672:5672"
+      # HTTP Management UI port (web dashboard)
+      - "15672:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=${RMQUSER}
+      - RABBITMQ_DEFAULT_PASS=${RMQPASS}
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+      - rabbitmq_logs:/var/log/rabbitmq
+
+volumes:
+  rabbitmq_data:
+  rabbitmq_logs:
