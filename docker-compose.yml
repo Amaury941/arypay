@@ -15,6 +15,11 @@ services:
       - rabbitmq_data:/var/lib/rabbitmq
       - rabbitmq_logs:/var/log/rabbitmq
 
+    broker:
+      queue:
+        ticket:
+            name: default.ticket
+
 volumes:
   rabbitmq_data:
   rabbitmq_logs:
