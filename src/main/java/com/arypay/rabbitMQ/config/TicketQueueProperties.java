@@ -1,4 +1,4 @@
-package com.arypay.properties;
+package com.arypay.rabbitMQ.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

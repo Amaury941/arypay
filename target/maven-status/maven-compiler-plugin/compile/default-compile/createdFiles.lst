@@ -1,4 +1,2 @@
 com/arypay/App.class
 com/arypay/Test.class
-com/arypay/properties/TicketQueueProperties.class
-com/arypay/beans/RabbitMqConfiguration.class
