@@ -69,8 +69,6 @@
       <artifactId>amqp-client</artifactId>
       <version>5.33.0</version>
     </dependency>
-<<<<<<< HEAD
-=======
     <!-- Postgres -->
     <dependency>
         <groupId>org.postgresql</groupId>
@@ -78,28 +76,18 @@
         <scope>runtime</scope>
     </dependency>
     
->>>>>>> main
     <!--Automatic Getters & Setters for classes -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
-<<<<<<< HEAD
-=======
-
->>>>>>> main
     <!--Spring boot: Component-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-<<<<<<< HEAD
-      <version>4.1.0</version>
-    </dependency>
-=======
     </dependency>
 
->>>>>>> main
     <!-- Jakarta for ORM and data management-->
     <dependency>
         <groupId>org.springframework.boot</groupId>

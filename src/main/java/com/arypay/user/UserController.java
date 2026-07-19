@@ -1,7 +1,7 @@
 package com.arypay.user;
 
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -17,7 +17,7 @@ public class UserController {
         this.repository = repository;
     }
     
-    @PostMapping("/hello")
+    @GetMapping("/hello")
     public ResponseEntity<GenericResponseDTO> hello() {
         GenericResponseDTO response = new GenericResponseDTO("Hello!");
         return ResponseEntity.ok(response);
