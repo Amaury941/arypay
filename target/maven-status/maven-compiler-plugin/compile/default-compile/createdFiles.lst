@@ -1,2 +1,4 @@
-com/arypay/App.class
+com/arypay/user/User.class
 com/arypay/Test.class
+com/arypay/Receive.class
+com/arypay/Send.class

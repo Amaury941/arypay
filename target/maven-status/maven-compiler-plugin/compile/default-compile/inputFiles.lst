@@ -1,5 +1,4 @@
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/App.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Receive.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Send.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Test.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/rabbitMQ/RabbitTicketPublisher.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/rabbitMQ/config/RabbitMqConfiguration.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/rabbitMQ/config/TicketQueueProperties.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/User.java
