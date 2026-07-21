@@ -44,35 +44,51 @@
   </dependencyManagement>
 
   <dependencies>
+    
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-api</artifactId>
       <scope>test</scope>
     </dependency>
+    
     <!-- Optionally: parameterized tests support -->
     <dependency>
       <groupId>org.junit.jupiter</groupId>
       <artifactId>junit-jupiter-params</artifactId>
       <scope>test</scope>
     </dependency>
+    
+    <dependency> <!-- para usar DB_user & DB_password em application.properties -->
+      <groupId>me.paulschwarz</groupId>
+      <artifactId>springboot4-dotenv</artifactId>
+    </dependency>
+    
     <!-- Rabbitmq -->
     <dependency>
       <groupId>com.rabbitmq</groupId>
       <artifactId>amqp-client</artifactId>
       <version>5.33.0</version>
     </dependency>
+    <!-- Postgres -->
+    <dependency>
+        <groupId>org.postgresql</groupId>
+        <artifactId>postgresql</artifactId>
+        <scope>runtime</scope>
+    </dependency>
+    
     <!--Automatic Getters & Setters for classes -->
     <dependency>
       <groupId>org.projectlombok</groupId>
       <artifactId>lombok</artifactId>
       <optional>true</optional>
     </dependency>
+
     <!--Spring boot: Component-->
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-web</artifactId>
-      <version>4.1.0</version>
     </dependency>
+
     <!-- Jakarta for ORM and data management-->
     <dependency>
         <groupId>org.springframework.boot</groupId>
@@ -122,6 +138,11 @@
         <plugin>
           <artifactId>maven-project-info-reports-plugin</artifactId>
           <version>3.6.1</version>
+        </plugin>
+        <!--spring boot plugin-->
+        <plugin>
+          <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-maven-plugin</artifactId>
         </plugin>
       </plugins>
     </pluginManagement>
