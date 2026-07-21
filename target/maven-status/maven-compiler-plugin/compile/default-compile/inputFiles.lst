@@ -1,4 +1,6 @@
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Receive.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Send.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/Test.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/App.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/Role.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/User.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserController.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserRepository.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/GenericResponseDTO.java
