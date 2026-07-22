@@ -1,6 +1,8 @@
 com/arypay/user/dto/GenericResponseDTO.class
 com/arypay/App.class
+com/arypay/wallet/Wallet.class
 com/arypay/user/Role.class
 com/arypay/user/UserController.class
 com/arypay/user/User.class
 com/arypay/user/UserRepository.class
+com/arypay/AppController.class
