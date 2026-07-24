@@ -110,7 +110,13 @@
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-flyway</artifactId>
     </dependency>
-    
+
+    <!--Security-->
+    <dependency> <!-- org.springframework.security vem daqui -->
+      <groupId>org.springframework.boot</groupId>
+      <artifactId>spring-boot-starter-security</artifactId>
+    </dependency>
+
   </dependencies>
 
   <build>

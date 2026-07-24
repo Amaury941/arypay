@@ -1,6 +1,7 @@
 package com.arypay.wallet;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -22,7 +23,7 @@ public class Wallet {
     @Column(name = "id")
     @Id
     @GeneratedValue(strategy = GenerationType.UUID)
-    private String id;
+    private UUID id;
     private BigDecimal balance;
     @Column(name = "user_id")
     private String user;
