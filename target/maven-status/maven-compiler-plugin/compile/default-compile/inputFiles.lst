@@ -1,10 +1,12 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/App.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/AppController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/Security.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/dbSeeder.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/Transaction.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/TransactionRepository.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/Role.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/User.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserRepository.java
-/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserSeed.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/GenericResponseDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/Wallet.java
