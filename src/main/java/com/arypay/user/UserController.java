@@ -5,7 +5,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.arypay.user.dto.GenericResponseDTO;
+import com.arypay.dto.GenericResponseDTO;
 
 @RestController
 @RequestMapping("users")
