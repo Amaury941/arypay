@@ -1,5 +1,6 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/App.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/AppController.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/FallBackController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/Security.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/dbSeeder.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/Transaction.java
