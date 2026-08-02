@@ -22,6 +22,4 @@ public class UserController {
         GenericResponseDTO response = new GenericResponseDTO("Hello!");
         return ResponseEntity.ok(response);
     }
-
-
 }
