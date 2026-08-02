@@ -2,6 +2,7 @@ package com.arypay;
 
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -45,15 +46,7 @@ public class dbSeeder implements CommandLineRunner {
             user2.setRole(Role.MERCHANT);
             userRepository.save(user2);
         }
-
-        if (transactionRepository.count() == 0 && userRepository.findRoleByEmail(mock1) == Role.COMMON && userRepository.findRoleByEmail(mock2) == Role.MERCHANT) {
-            Transaction transaction = new Transaction();
-            transaction.setSender(mock1);
-            transaction.setReceiver(mock2);
-            transaction.setAmount(new BigDecimal(0));
-            transactionRepository.save(transaction);
-        }
-
+        
     }
     
 }

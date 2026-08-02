@@ -2,14 +2,10 @@ package com.arypay.transaction.dto;
 
 import java.math.BigDecimal;
 
-import org.hibernate.validator.constraints.UUID;
-
-import jakarta.validation.constraints.NotBlank;
+import java.util.UUID;
 
 public record newTransactionDTO (
-    @NotBlank @UUID (message = "sender not informed")
-    String sender,
-    @NotBlank @UUID (message = "receiver not informed")
-    String receiver,
+    UUID sender,
+    UUID receiver,
     BigDecimal amount
 ){}

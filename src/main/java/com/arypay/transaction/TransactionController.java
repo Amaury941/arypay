@@ -44,7 +44,7 @@ public class TransactionController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<TransactionDTO> handleNewTransaction(@Valid @RequestBody newTransactionDTO transaction) {
+    public ResponseEntity<GenericResponseDTO> handleNewTransaction(@Valid @RequestBody newTransactionDTO transaction) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(transaction));
     }
 }

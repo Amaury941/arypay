@@ -23,9 +23,9 @@ public class Transaction {
     @GeneratedValue(strategy=GenerationType.UUID)
     private UUID id;
 
-    private String sender;
+    private UUID sender;
 
-    private String receiver;
+    private UUID receiver;
 
     private BigDecimal amount;
 }

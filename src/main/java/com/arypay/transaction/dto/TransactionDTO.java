@@ -1,9 +1,10 @@
 package com.arypay.transaction.dto;
 
 import java.math.BigDecimal;
+import java.util.UUID;
 
 public record TransactionDTO (
-    String sender,
-    String receiver,
+    UUID sender,
+    UUID receiver,
     BigDecimal amount
 ){}
