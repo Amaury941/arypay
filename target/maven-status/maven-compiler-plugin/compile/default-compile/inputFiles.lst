@@ -7,6 +7,9 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/Transaction.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/TransactionController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/TransactionRepository.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/TransactionService.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/dto/TransactionDTO.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/dto/newTransactionDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/Role.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/User.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserController.java
