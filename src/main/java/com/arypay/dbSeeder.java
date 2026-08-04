@@ -1,14 +1,8 @@
 package com.arypay;
 
-
-import java.math.BigDecimal;
-import java.util.UUID;
-
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.arypay.transaction.Transaction;
-import com.arypay.transaction.TransactionRepository;
 import com.arypay.user.Role;
 import com.arypay.user.User;
 import com.arypay.user.UserRepository;
@@ -22,7 +16,6 @@ import lombok.RequiredArgsConstructor;
 public class dbSeeder implements CommandLineRunner {
 
     private final UserRepository userRepository;
-    private final TransactionRepository transactionRepository;
     private final PasswordEncoder passwordEncoder;
 
     @Override

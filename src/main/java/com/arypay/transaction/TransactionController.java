@@ -15,7 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.arypay.config.TransactionNotFoundException;
 import com.arypay.dto.GenericResponseDTO;
 import com.arypay.transaction.dto.TransactionDTO;
-import com.arypay.transaction.dto.newTransactionDTO;
 
 import jakarta.validation.Valid;
 
@@ -44,7 +43,7 @@ public class TransactionController {
     }
 
     @PostMapping("/new")
-    public ResponseEntity<GenericResponseDTO> handleNewTransaction(@Valid @RequestBody newTransactionDTO transaction) {
+    public ResponseEntity<GenericResponseDTO> handleNewTransaction(@Valid @RequestBody TransactionDTO transaction) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(transaction));
     }
 }
