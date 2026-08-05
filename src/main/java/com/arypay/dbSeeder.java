@@ -6,6 +6,8 @@ import org.springframework.stereotype.Component;
 import com.arypay.user.Role;
 import com.arypay.user.User;
 import com.arypay.user.UserRepository;
+import com.arypay.wallet.WalletService;
+import com.arypay.wallet.DTO.CreateWalletDTO;
 
 import org.springframework.security.crypto.password.PasswordEncoder;
 
@@ -17,6 +19,7 @@ public class dbSeeder implements CommandLineRunner {
 
     private final UserRepository userRepository;
     private final PasswordEncoder passwordEncoder;
+    private final WalletService walletService;
 
     @Override
     public void run(String... args) {
@@ -28,6 +31,7 @@ public class dbSeeder implements CommandLineRunner {
             user1.setPassword(passwordEncoder.encode(mock1));
             user1.setRole(Role.COMMON);
             userRepository.save(user1);
+            walletService.create(new CreateWalletDTO(user1.getId()));
         }
 
         String mock2 = "jane@demo.com";
@@ -38,6 +42,7 @@ public class dbSeeder implements CommandLineRunner {
             user2.setPassword(passwordEncoder.encode(mock2));
             user2.setRole(Role.MERCHANT);
             userRepository.save(user2);
+            walletService.create(new CreateWalletDTO(user2.getId()));
         }
         
     }

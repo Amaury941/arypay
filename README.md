@@ -2,7 +2,7 @@
 [x] Adicionando a dependência Spring-Amqp
 [x] Criando uma Configuração Básica para Beans do Rabbit
 [x] Trocando rota para 5433 -p
-
+[ ] Dando update na wallet
 
 curl -X POST http://localhost:8080/transactions/new -H "Content-Type: application/json" -d '{"sender":"5ba6a7fb-713d-4482-9841-a07ced5fb4e9","receiver":"ca862d64-8712-4479-930e-5e63dd8a3c9e","amount":67.69}'
 
