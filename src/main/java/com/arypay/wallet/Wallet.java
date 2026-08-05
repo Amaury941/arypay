@@ -30,8 +30,12 @@ public class Wallet {
     private UUID holder;
 
     public Wallet(UUID user) {
-        
         this.holder = user;
         this.balance = BigDecimal.ZERO;
+    }
+
+    public Wallet(UUID user, BigDecimal balance) {
+        this.holder = user;
+        this.balance = balance;
     }
 }

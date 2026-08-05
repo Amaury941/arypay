@@ -13,6 +13,7 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/User.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserRepository.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserService.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/UserDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/DTO/CreateWalletDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/DTO/WalletDTO.java

@@ -17,9 +17,12 @@ public class WalletService {
     @Transactional
     public GenericResponseDTO create (CreateWalletDTO target) {
         if ( userRepository.findByIdForUpdate(target.holder()).isPresent() && !repository.existsByHolder(target.holder())) {
-            repository.save(new Wallet(target.holder()));
+            repository.save(new Wallet(target.holder(),target.balance()));
         }
         return new GenericResponseDTO("done.");
     }
+    // TODO: generate subract operation
+
+    // TODO: generate add operation
 
 }
