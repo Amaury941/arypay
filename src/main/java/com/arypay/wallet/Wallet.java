@@ -25,6 +25,17 @@ public class Wallet {
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
     private BigDecimal balance;
-    @Column(name = "user_id")
-    private String user;
+
+    @Column(name = "holder")
+    private UUID holder;
+
+    public Wallet(UUID user) {
+        this.holder = user;
+        this.balance = BigDecimal.ZERO;
+    }
+
+    public Wallet(UUID user, BigDecimal balance) {
+        this.holder = user;
+        this.balance = balance;
+    }
 }

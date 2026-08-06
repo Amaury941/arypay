@@ -1,59 +1,33 @@
 package com.arypay;
 
-
 import java.math.BigDecimal;
+import java.util.Optional;
+import java.util.UUID;
 
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import com.arypay.transaction.Transaction;
-import com.arypay.transaction.TransactionRepository;
 import com.arypay.user.Role;
-import com.arypay.user.User;
-import com.arypay.user.UserRepository;
-
-import org.springframework.security.crypto.password.PasswordEncoder;
-
+import com.arypay.user.UserService;
+import com.arypay.wallet.WalletService;
+import com.arypay.wallet.DTO.CreateWalletDTO;
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
 public class dbSeeder implements CommandLineRunner {
 
-    private final UserRepository userRepository;
-    private final TransactionRepository transactionRepository;
-    private final PasswordEncoder passwordEncoder;
+    private final UserService userService;
+    private final WalletService walletService;
 
     @Override
     public void run(String... args) {
 
-        String mock1 = "john@demo.com";
-        if (userRepository.existsByEmail(mock1) == false) {
-            User user1 = new User();
-            user1.setEmail(mock1);
-            user1.setPassword(passwordEncoder.encode(mock1));
-            user1.setRole(Role.COMMON);
-            userRepository.save(user1);
-        }
-
-        String mock2 = "jane@demo.com";
+        Optional<UUID> user1 = userService.create("john@demo.com","john@demo.com",Role.COMMON);
+        if (user1.isPresent()) {System.out.println("SEED: created First user");walletService.create(new CreateWalletDTO(user1.get(),BigDecimal.valueOf(100)));}
+        Optional<UUID> user2 = userService.create("jane@demo.com","jane@demo.com",Role.MERCHANT);
+        if (user2.isPresent()) {System.out.println("SEED: created Second user");walletService.create(new CreateWalletDTO(user2.get(),BigDecimal.valueOf(0)));}
         
-        if (userRepository.existsByEmail(mock2) == false) {
-            User user2 = new User();
-            user2.setEmail(mock2);
-            user2.setPassword(passwordEncoder.encode(mock2));
-            user2.setRole(Role.MERCHANT);
-            userRepository.save(user2);
-        }
-
-        if (transactionRepository.count() == 0 && userRepository.findRoleByEmail(mock1) == Role.COMMON && userRepository.findRoleByEmail(mock2) == Role.MERCHANT) {
-            Transaction transaction = new Transaction();
-            transaction.setSender(mock1);
-            transaction.setReceiver(mock2);
-            transaction.setAmount(new BigDecimal(0));
-            transactionRepository.save(transaction);
-        }
-
     }
     
 }

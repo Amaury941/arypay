@@ -20,7 +20,6 @@ public class Security {
         return new BCryptPasswordEncoder();
     }
 
-
     @Bean
     SecurityFilterChain securityFilterChain(HttpSecurity http) {
         http
