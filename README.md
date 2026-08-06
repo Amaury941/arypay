@@ -5,9 +5,9 @@
 [x] Criando uma Configuração Básica para Beans do Rabbit
 [x] Trocando rota para 5433 -p
 [x] Dando update na wallet
-[ ] Criando usuário
-[ ] Mandando mensagem para o rabbitMQ
+[x] Criando usuário
 [ ] Otimizando as procuras no banco de dados
+[ ] Mandando mensagem para o rabbitMQ
 
 psql -U admin -d arypay -h localhost
 
