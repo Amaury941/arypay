@@ -2,6 +2,9 @@ package com.arypay.user;
 
 import org.springframework.stereotype.Service;
 
+import com.arypay.dto.GenericResponseDTO;
+import com.arypay.user.dto.NewUserDTO;
+
 import java.util.Optional;
 import java.util.UUID;
 
@@ -28,4 +31,18 @@ public class UserService {
         }
         return Optional.empty();
     }
+
+    @Transactional
+    public GenericResponseDTO create (NewUserDTO dto) {
+        if (userRepository.existsByEmail(dto.email()) == false) {
+            User user1 = new User();
+            user1.setEmail(dto.email());
+            user1.setPassword(passwordEncoder.encode(dto.password()));
+            user1.setRole(Role.COMMON);
+            userRepository.save(user1);
+            return new GenericResponseDTO(""+user1.getId());
+        }
+        return new GenericResponseDTO("User already exists! email has to be unique!");
+    }
+
 }

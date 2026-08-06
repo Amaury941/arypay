@@ -7,6 +7,7 @@
 [x] Dando update na wallet
 [ ] Criando usuário
 [ ] Mandando mensagem para o rabbitMQ
+[ ] Otimizando as procuras no banco de dados
 
 psql -U admin -d arypay -h localhost
 
@@ -17,3 +18,6 @@ curl -X POST http://localhost:8080/transactions/new -H "Content-Type: applicatio
 
 // receiver não autorizado
 curl -X POST http://localhost:8080/transactions/new -H "Content-Type: application/json" -d '{"sender":"147c6d5b-375a-4e2f-983f-87a1feae7211","receiver":"147c6d5b-375a-4e2f-983f-87a1feae7211","amount":1}'
+
+// receiver não autorizado
+curl -X POST http://localhost:8080/users/new -H "Content-Type: application/json" -d '{"email":"teste@teste.com","password":"rocambole"}'
