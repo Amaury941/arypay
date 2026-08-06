@@ -1,8 +1,12 @@
+// TODO: o que falta...
+
 [x] Definindo propriedades para a fila 
 [x] Adicionando a dependência Spring-Amqp
 [x] Criando uma Configuração Básica para Beans do Rabbit
 [x] Trocando rota para 5433 -p
-[ ] Dando update na wallet
+[x] Dando update na wallet
+[ ] Criando usuário
+[ ] Mandando mensagem para o rabbitMQ
 
 psql -U admin -d arypay -h localhost
 
