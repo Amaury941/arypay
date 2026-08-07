@@ -1,7 +1,10 @@
 package com.arypay.wallet;
 
+import java.util.UUID;
+
 import org.springframework.stereotype.Service;
 
+import com.arypay.config.exceptions.UserDiscrepancyException;
 import com.arypay.dto.GenericResponseDTO;
 import com.arypay.transaction.dto.TransactionDTO;
 import com.arypay.user.UserRepository;
@@ -16,11 +19,16 @@ public class WalletService {
     private final WalletRepository repository; 
     private final UserRepository userRepository;
     @Transactional
-    public GenericResponseDTO create (CreateWalletDTO target) {
-        if ( userRepository.findByIdForUpdate(target.holder()).isPresent() && !repository.existsByHolder(target.holder())) {
-            repository.save(new Wallet(target.holder(),target.balance()));
-        }
-        return new GenericResponseDTO("done.");
+    public UUID create (CreateWalletDTO target) throws UserDiscrepancyException {
+        
+        userRepository.findByIdForUpdate(target.holder()).orElseThrow(() -> new UserDiscrepancyException("Holder not found"));
+
+        if (repository.existsByHolder(target.holder())) {throw new UserDiscrepancyException("Holder already has an account");};
+
+        Wallet wallet = new Wallet(target.holder(),target.balance()); 
+        repository.save(wallet);
+        
+        return wallet.getId();
     }
 
     @Transactional

@@ -1,8 +1,7 @@
 package com.arypay.user.dto;
 
-import java.util.UUID;
-
-public record UserDTO(
-    UUID id,
-    String email
-) {}
+public sealed interface UserDTO permits 
+ModelUserDTO,
+reqNewUserDTO, 
+resNewUserDTO 
+{}

@@ -9,9 +9,10 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.arypay.config.exceptions.UserDiscrepancyException;
 import com.arypay.dto.GenericResponseDTO;
-import com.arypay.user.dto.NewUserDTO;
-import com.arypay.user.dto.UserDTO;
+import com.arypay.user.dto.reqNewUserDTO;
+import com.arypay.user.dto.ModelUserDTO;
 
 import jakarta.validation.Valid;
 
@@ -28,22 +29,25 @@ public class UserController {
     }
 
     @GetMapping
-    public List<UserDTO> listAll() {
+    public List<ModelUserDTO> listAll() {
         return repository.findAll().stream().map(
-            target -> new UserDTO(target.getId(),target.getEmail()))
+            target -> new ModelUserDTO(target.getId(),target.getEmail()))
         .toList();
     }
 
     @GetMapping("/hello")
-    public ResponseEntity<GenericResponseDTO> hello() {
+    public ResponseEntity<?> hello() {
         GenericResponseDTO response = new GenericResponseDTO("Hello!");
         return ResponseEntity.ok(response);
     }
     
     @PostMapping("/new")
-    public ResponseEntity<GenericResponseDTO>handleNew(@Valid @RequestBody NewUserDTO dto ) {
-        GenericResponseDTO response = service.create(dto);
-        return ResponseEntity.ok(response);
+    public ResponseEntity<?>handleNew(@Valid @RequestBody reqNewUserDTO dto ) {
+        try {
+            return ResponseEntity.ok().body(service.create(dto));
+        } catch (UserDiscrepancyException e) {
+            return ResponseEntity.badRequest().body(e.getMessage());
+        }    
     }
 
 }
