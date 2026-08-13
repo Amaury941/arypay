@@ -42,11 +42,16 @@ public class UserService {
     public resNewUserDTO create (reqNewUserDTO dto) {
 
         if (userRepository.existsByEmail(dto.email())) {throw new UserDiscrepancyException("User already exists");}
+        if (userRepository.existsByCPFJ(dto.CPFJ())) {throw new UserDiscrepancyException("CPFJ already in use");}
 
         User user1 = new User();
         user1.setEmail(dto.email());
+        
+        user1.setUsername(dto.username());
+        user1.setCPFJ(dto.CPFJ());
+
         user1.setPassword(passwordEncoder.encode(dto.password()));
-        user1.setRole(Role.COMMON);
+        user1.setRole(dto.role());
         userRepository.save(user1);
         UUID walletId = walletService.create(new CreateWalletDTO(user1.getId(),BigDecimal.valueOf(100)));
         return new resNewUserDTO(user1.getId(),walletId);

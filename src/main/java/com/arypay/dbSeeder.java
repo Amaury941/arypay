@@ -17,8 +17,8 @@ public class dbSeeder implements CommandLineRunner {
     @Override
     public void run(String... args) {
         try {
-            userService.create(new reqNewUserDTO("john@demo.com", "john@demo.com", Role.COMMON));
-            userService.create(new reqNewUserDTO("jane@demo.com", "jane@demo.com", Role.MERCHANT));
+            userService.create(new reqNewUserDTO("john",1,"john@demo.com","john@demo.com", Role.COMMON));
+            userService.create(new reqNewUserDTO("jane",2,"jane@demo.com", "jane@demo.com", Role.MERCHANT));
         }
         catch (RuntimeException r){
             // do nothing

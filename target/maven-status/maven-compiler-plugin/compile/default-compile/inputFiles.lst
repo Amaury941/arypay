@@ -3,6 +3,7 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/FallBackController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/Security.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/TransactionNotFoundException.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/config/exceptions/UserDiscrepancyException.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/dbSeeder.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/dto/GenericResponseDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/transaction/Transaction.java
@@ -15,7 +16,10 @@
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserController.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserRepository.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/UserService.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/ModelUserDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/UserDTO.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/reqNewUserDTO.java
+/home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/user/dto/resNewUserDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/DTO/CreateWalletDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/DTO/WalletDTO.java
 /home/amaury/Documentos/JavaProjects/arypay/src/main/java/com/arypay/wallet/Wallet.java
