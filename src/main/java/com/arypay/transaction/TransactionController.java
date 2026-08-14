@@ -42,7 +42,7 @@ public class TransactionController {
         return new GenericResponseDTO(String.format("TRANSACTION: %s > %s > %s",target.getSender(),target.getAmount(),target.getReceiver()));
     }
 
-    @PostMapping("/new")
+    @PostMapping("/transfer")
     public ResponseEntity<GenericResponseDTO> handleNewTransaction(@Valid @RequestBody TransactionDTO transaction) {
         return ResponseEntity.status(HttpStatus.CREATED).body(service.create(transaction));
     }

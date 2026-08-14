@@ -22,20 +22,20 @@ public class TransactionService {
     @Transactional
     public GenericResponseDTO create (TransactionDTO dto){
 
-        Wallet wallet1 = walletRepository.findByIdForUpdate(dto.sender())
+        Wallet wallet1 = walletRepository.findByHolderForUpdate(dto.payer())
                 .orElse(null);
         if (wallet1 == null) {
             return new GenericResponseDTO("wallet de sender não encontrada");
         }
 
-        if ( wallet1.getBalance().compareTo(dto.amount()) < 0 ) {return new GenericResponseDTO("Saldo insuficiente");}
+        if ( wallet1.getBalance().compareTo(dto.value()) < 0 ) {return new GenericResponseDTO("Saldo insuficiente");}
 
         Role role1 = userRepository.findRoleById(wallet1.getHolder()).orElse(null);
         if (role1 == null || role1 != Role.COMMON) {
             return new GenericResponseDTO("sender não autorizado");
         }
 
-        Wallet wallet2 = walletRepository.findByIdForUpdate(dto.receiver())
+        Wallet wallet2 = walletRepository.findByHolderForUpdate(dto.payee())
                 .orElse(null);
         if (wallet2 == null) {
             return new GenericResponseDTO("wallet de receiver não encontrada");
@@ -49,10 +49,10 @@ public class TransactionService {
         Transaction transaction = new Transaction();
         transaction.setSender(wallet1.getId());
         transaction.setReceiver(wallet2.getId());
-        transaction.setAmount(dto.amount());
+        transaction.setAmount(dto.value());
 
-        wallet1.setBalance(wallet1.getBalance().subtract(dto.amount()));
-        wallet2.setBalance(wallet2.getBalance().add(dto.amount()));
+        wallet1.setBalance(wallet1.getBalance().subtract(dto.value()));
+        wallet2.setBalance(wallet2.getBalance().add(dto.value()));
 
         Transaction saved = transactionRepository.save(transaction);
 

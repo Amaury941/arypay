@@ -33,13 +33,13 @@ public class WalletService {
 
     @Transactional
     public GenericResponseDTO updateWalletBalance(TransactionDTO dto) {
-        Wallet sender = repository.findById(dto.sender())
+        Wallet sender = repository.findByHolderForUpdate(dto.payer())
                 .orElseThrow();
-        Wallet receiver = repository.findById(dto.receiver())
+        Wallet receiver = repository.findByHolderForUpdate(dto.payee())
                 .orElseThrow();
 
-        sender.setBalance(sender.getBalance().subtract(dto.amount()));
-        receiver.setBalance(receiver.getBalance().add(dto.amount()));
+        sender.setBalance(sender.getBalance().subtract(dto.value()));
+        receiver.setBalance(receiver.getBalance().add(dto.value()));
 
         return new GenericResponseDTO("done");
     };
