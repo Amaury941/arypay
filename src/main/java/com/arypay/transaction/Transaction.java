@@ -1,5 +1,6 @@
 package com.arypay.transaction;
 
+import java.io.Serializable;
 import java.math.BigDecimal;
 import java.util.UUID;
 
@@ -18,7 +19,7 @@ import lombok.Setter;
 @NoArgsConstructor
 
 @Table(name = "transactions")
-public class Transaction {
+public class Transaction implements Serializable {
     @Id
     @GeneratedValue(strategy=GenerationType.UUID)
     private UUID id;

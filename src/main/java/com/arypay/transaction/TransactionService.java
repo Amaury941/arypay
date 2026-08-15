@@ -4,6 +4,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import com.arypay.dto.GenericResponseDTO;
+import com.arypay.producer.MessageProducer;
 import com.arypay.transaction.dto.TransactionDTO;
 import com.arypay.user.Role;
 import com.arypay.user.UserRepository;
@@ -18,6 +19,7 @@ public class TransactionService {
     private final TransactionRepository transactionRepository;
     private final UserRepository userRepository;
     private final WalletRepository walletRepository;
+    private final MessageProducer messeger;
 
     @Transactional
     public GenericResponseDTO create (TransactionDTO dto){
@@ -51,8 +53,11 @@ public class TransactionService {
         transaction.setReceiver(wallet2.getId());
         transaction.setAmount(dto.value());
 
+        messeger.SendMessage("transfer-exchange", "new", transaction);
+
         wallet1.setBalance(wallet1.getBalance().subtract(dto.value()));
         wallet2.setBalance(wallet2.getBalance().add(dto.value()));
+
 
         Transaction saved = transactionRepository.save(transaction);
 

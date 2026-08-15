@@ -10,6 +10,8 @@
 [ ] Mandando mensagem para o rabbitMQ
 [ ] validador de CPF
 
+sudo lsof -i :8080
+
 psql -U admin -d arypay -h localhost
 
 curl -X POST http://localhost:8080/transactions/transfer -H "Content-Type: application/json" -d '{"payer":"eaeca767-ea49-4e89-bba9-8fb8f4687b32","payee":"b938aa72-7ae8-494d-bfe6-801786c58640","value":1}'
